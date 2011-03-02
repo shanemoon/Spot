@@ -1,0 +1,40 @@
+<% title "Description" %>
+
+<% @painting = Painting.find(params[:id]) %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<div class= "show">
+  <h2 style="text-align:center;position:absolute;width:inherit;">Photo Information</h2>
+  <div class= "show-heading">
+  <%= link_to image_tag('home.png', :size=>'32x32'), root_path, :class=>"button"%>
+  <%= link_to image_tag('close.png', :size=>'32x32'), @painting, :class=>"button", :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+
+<div class="icon">
+  <%= image_tag(@painting.image_url, :size=> "180x180") %>
+  <p><b><%= @painting.name %></b></p>
+</div>
+
+<div class="side">
+<p>
+  <b>Name:</b>
+  <%= @painting.name%>
+<p>
+<p>
+  <b>Description</b>
+  <%= @painting.description%>
+<p>
+
+<p>
+  <%= link_to "Edit this Painting", edit_painting_path(@painting) %>  
+</p>
+
+
+</div>
+</div>
+<br />
+
+
