@@ -2,8 +2,8 @@
   <b> <%= comment.commenter %></p> </b>
 <p>
   <%= comment.body %>
-  <%= link_to 'Delete',
-              :confirm => 'Are you sure?', [comment.painting, comment],
+  <%= link_to 'Delete',[comment.painting, comment],
+              :confirm => 'Are you sure?',
               :method => :delete %>
 </p>
 
