@@ -1,0 +1,27 @@
+<h1>Listing spot_finders</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spot_finders.each do |spot_finder| %>
+  <tr>
+    <td><%= spot_finder.name %></td>
+    <td><%= spot_finder.longitude %></td>
+    <td><%= spot_finder.latitude %></td>
+    <td><%= link_to 'Show', spot_finder %></td>
+    <td><%= link_to 'Edit', edit_spot_finder_path(spot_finder) %></td>
+    <td><%= link_to 'Destroy', spot_finder, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spot finder', new_spot_finder_path %>

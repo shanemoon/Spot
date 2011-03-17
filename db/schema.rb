@@ -10,21 +10,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110213051146) do
+ActiveRecord::Schema.define(:version => 20110317150353) do
 
-  create_table "galleries", :force => true do |t|
-    t.string   "name"
+  create_table "comments", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "painting_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "paintings", :force => true do |t|
-    t.integer  "gallery_id"
+    t.integer  "spot_id"
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "spot_finders", :force => true do |t|
+    t.string   "name"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spots", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
 end

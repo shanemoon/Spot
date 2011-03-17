@@ -1,6 +1,6 @@
 <%= form_for @painting, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
-  <%= f.hidden_field :gallery_id %>
+  <%= f.hidden_field :spot_id %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>

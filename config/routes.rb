@@ -1,6 +1,10 @@
 Picturesque::Application.routes.draw do
-  root :to => "galleries#index"
+  resources :spot_finders
 
-  resources :galleries
-  resources :paintings
+  root :to => "spots#index"
+
+  resources :spots
+  resources :paintings do
+    resources :comments
+  end
 end

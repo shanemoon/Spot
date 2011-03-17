@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  longitude: 1
+  latitude: 1
+
+two:
+  name: MyString
+  longitude: 1
+  latitude: 1

@@ -1,0 +1,13 @@
+<p>
+    <% title "Spots" %> <br>
+</p>
+
+<% for spot in @spots %>
+  <div class="spot">
+    <h2><%= link_to spot.name, spot %></h2>
+    Files: <%= spot.paintings.size %> <br></br>
+  </div>
+<% end %>
+
+
+<p><%= link_to "New Spot", new_spot_path %>  <%= link_to "Spot Finder", new_spot_finder_path %> </p>

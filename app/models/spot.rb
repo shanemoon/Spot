@@ -1,5 +1,5 @@
-class Gallery < ActiveRecord::Base
-  attr_accessible :name
+class Spot < ActiveRecord::Base
+  attr_accessible :name, :latitude, :longitude
   has_many :paintings
 end
 

@@ -1,0 +1,2 @@
+module SpotFindersHelper
+end

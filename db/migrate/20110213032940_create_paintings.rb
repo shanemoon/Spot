@@ -1,7 +1,7 @@
 class CreatePaintings < ActiveRecord::Migration
   def self.up
     create_table :paintings do |t|
-      t.integer :gallery_id
+      t.integer :spot_id
       t.string :name
       t.string :description
       t.timestamps

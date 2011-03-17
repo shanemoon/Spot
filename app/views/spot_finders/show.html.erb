@@ -1,0 +1,35 @@
+<p>
+  <b> Searching the following location </b>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @spot_finder.name %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @spot_finder.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @spot_finder.latitude %>
+</p>
+
+
+<br><br><br><br>
+
+<% @spots = Spot.all %>
+
+<% for spot in @spots %>
+    (<%= spot_longitude = spot.longitude %> ,
+    <%= spot_latitude = spot.latitude %>)
+    <% if (spot_latitude - @spot_finder.latitude.to_f).abs < 5 && (spot_longitude - @spot_finder.longitude.to_f).abs < 5 %>
+        <h2><%= link_to spot.name, spot %></h2>
+    <% end %>
+    <br>
+<% end %>
+
+
+

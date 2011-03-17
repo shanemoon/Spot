@@ -78,6 +78,15 @@ h2{
     box-shadow: 0 0 10px #FFF;
 }
 
+
+.body{
+    float:left;
+    width:80%;
+    margin-top:20px;
+    margin-left: 20px;
+    position:relative;
+}
+
 .button img:hover{
     width: 36px;
     height: 36px;

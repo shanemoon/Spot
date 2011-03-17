@@ -1,0 +1,36 @@
+<% title @spot.name %>
+
+
+<div class="ContentFlow">
+    <div class="loadIndicator"><div class="indicator"></div></div>
+    <div class="flow">
+      <% for painting in @spot.paintings %>
+        <div class="item" href="../paintings/<%=painting.id%>">
+            <% if painting.image_url.include? '.jpg' or painting.image_url.include?'.png'%>
+                <%= image_tag(painting.image_url, :class => "content")%>
+
+            <% elsif painting.image_url.include? '.doc' or painting.image_url.include? '.docx' %>
+                <%= image_tag('word_icon.png', :class => "content")%>
+
+            <% elsif painting.image_url.include? '.pdf' %>
+                <%= image_tag('pdf_icon.png', :class => "content")%>
+
+            <% else %>
+                <%= image_tag('question_icon.png', :class => "content")%>
+            <% end %>
+            <div class="caption"><%=painting.name%></div>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="globalCaption"></div>
+    <div class="scrollbar"><div class="slider"><div class="position"></div></div></div>
+</div>
+
+
+
+<p>
+  <%= link_to "Add a File", new_painting_path(:spot_id => @spot) %> |
+  <%= link_to "Remove Spot", @spot, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View Spots", spots_path %>
+</p>
